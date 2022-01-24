@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {Container} from "react-bootstrap";
+import Clock from "./Clock";
+import {useState} from "react";
+import PostsView from "./views/PostsView";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App(){
+
+    const [showClock, setShowClock] = useState(true);
+
+    return (
+        <Container fluid>
+            <button
+                variant="primary"
+                className='mt-3'
+                onClick={() => setShowClock(!showClock)}
+            >
+                toggle clock
+            </button>
+            {showClock ? <Clock/> : null}
+            <PostsView/>
+        </Container>
+    );
 }
-
-export default App;
