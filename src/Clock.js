@@ -5,7 +5,7 @@ import {Alert} from "react-bootstrap";
 
 const df = dateFormatter('H:i:s');
 
-function Clock(props){
+function Clock(props) {
     const [time, setTime] = useState(new Date());
 
     useEffect(() => {
@@ -13,18 +13,18 @@ function Clock(props){
             setTime(new Date());
         }, 1000);
 
-        return()=>{
+        return () => {
             clearInterval(intervalId)
         }
-    },[])
+    }, [])
 
-    return(
+    return (
         <Alert
             variant="primary"
             className="mt-3"
         >
             {df(time)}
-            </Alert>
+        </Alert>
     );
 }
 

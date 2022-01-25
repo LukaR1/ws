@@ -3,12 +3,13 @@ import Clock from "./Clock";
 import {useState} from "react";
 import PostsView from "./views/PostsView";
 
-export default function App(){
+export default function App() {
 
     const [showClock, setShowClock] = useState(true);
 
     return (
         <Container fluid>
+            //*
             <button
                 variant="primary"
                 className='mt-3'
@@ -16,6 +17,7 @@ export default function App(){
             >
                 toggle clock
             </button>
+            *//
             {showClock ? <Clock/> : null}
             <PostsView/>
         </Container>
